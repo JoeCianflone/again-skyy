@@ -1,0 +1,27 @@
+{
+  "name": "Skyy Facebook App",
+  "version": "0.1.0",
+  "authors": [
+    "Joe Cianflone <joe@cianflone.co>"
+  ],
+  "description": "Skyy",
+  "main": "index.php",
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap-sass-official": "latest",
+    "jquery.cookie": "latest",
+    "modernizr": "latest",
+    "handlebars": "latest",
+    "html5-boilerplate": "latest",
+    "normalize-scss": "latest"
+  }
+}
