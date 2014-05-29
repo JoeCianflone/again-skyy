@@ -4,9 +4,11 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        @include ('admin.partials.head')
+        @include('front.partials.head')
     </head>
-    <body class="@yield('signature', 'basic')">
-
+    <body class="@yield('signature', 'main-page')">
+        @include('front.partials.browser-warning')
+        @yield('content')
+        @include('front.partials.scripts')
     </body>
 </html>
