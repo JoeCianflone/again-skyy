@@ -4,8 +4,15 @@
     "keywords": [],
     "license": "",
     "require": {
-        "laravel/framework": "4.1.*"
+        "laravel/framework": "4.1.*",
+        "intervention/image": "dev-master"
     },
+   "require-dev": {
+      "way/generators": "dev-master",
+      "mockery/mockery": "dev-master",
+      "fzaninotto/faker": "dev-master",
+      "phpspec/phpspec": "dev-master"
+   },
     "autoload": {
         "classmap": [
             "app_config/database/migrations",

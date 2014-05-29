@@ -1,14 +1,9 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+const CONTROLLER = "Cianflone\\Again\\Controllers\\";
 
-Route::get('/', 'Cianflone\Again\Controllers\HomeController@index');
+Route::get('/', CONTROLLER . "HomeController@index");
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('dashboard', CONTROLLER . "Admin\\DashboardController");
+});
