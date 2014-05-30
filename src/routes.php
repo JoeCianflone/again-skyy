@@ -6,5 +6,6 @@ Route::get('/', CONTROLLER . "HomeController@index");
 
 // Admin panel stuff here .....................................................
 Route::group(['prefix' => 'admin/v1/panel'], function () {
-    Route::resource('dashboard', CONTROLLER . "Admin\\DashboardController");
+    Route::get('login', CONTROLLER . "Admin\\SessionController@index");
+
 });

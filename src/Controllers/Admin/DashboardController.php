@@ -1,8 +1,6 @@
 <?php
 namespace Cianflone\Again\Controllers\Admin;
 
-use Cianflone\Again\Controllers\BaseController;
-
 class DashboardController extends BaseController
 {
     /**

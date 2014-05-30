@@ -7,6 +7,8 @@
         @include ('admin.partials.head')
     </head>
     <body class="@yield('signature', 'basic')">
-
+      <div class="container">
+         @yield('main-content')
+      </div>
     </body>
 </html>

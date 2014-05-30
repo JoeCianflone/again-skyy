@@ -1,0 +1,12 @@
+@import "compass/css3";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+
+.login {
+   background: #444;
+   padding: 40px 0;
+   .form-signin {
+      background: #eee;
+      padding: 40px;
+      @include border-radius(10px);
+   }
+}
