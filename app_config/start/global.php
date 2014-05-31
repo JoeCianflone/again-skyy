@@ -67,6 +67,9 @@ require_once base_path().'/src/routes.php';
 // Filters are located within our /src directory.
 require_once base_path().'/src/filters.php';
 
+// Bindings are located within our /src directory.
+require_once base_path().'/src/bindings.php';
+
 // Observers are located within our /src directory.
 // require_once base_path().'/src/observers.php';
 

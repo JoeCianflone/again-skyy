@@ -4,18 +4,18 @@
 
 @section('main-content')
    <div class="row">
-      <form class="form-signin col-md-4 col-md-offset-4 " role="form">
+      {{ Form::open(['route' => 'login.attempt', 'method' => 'post', 'class' =>'form-signin col-md-4 col-md-offset-4', 'role' => 'form']) }}
          <h2 class="form-signin-heading">Please sign in</h2>
          <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email address" required autofocus>
+            {{ Form::email("email", Input::old('email'), ["placeholder" => "Email Address",  "class" => "form-control", "required"=>"required", "autofocus"=>"autofocus"]) }}
          </div>
          <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required>
+            {{ Form::password("password", ["placeholder" => "Password",  "class" => "form-control", "required"=>"required"]) }}
          </div>
          <div class="form-group">
             <button class="btn btn-sm btn-primary" type="submit">Sign in</button>
          </div>
-      </form>
+      {{ Form::close() }}
    </div>
 @stop
 

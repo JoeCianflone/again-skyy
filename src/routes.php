@@ -6,6 +6,12 @@ Route::get('/', CONTROLLER . "HomeController@index");
 
 // Admin panel stuff here .....................................................
 Route::group(['prefix' => 'admin/v1/panel'], function () {
-    Route::get('login', CONTROLLER . "Admin\\SessionController@index");
+    Route::get('login',  ["as" => 'login',         "uses"  => CONTROLLER . "Admin\\SessionController@index"]);
+    Route::post('login', ["as" => 'login.attempt', "uses"  => CONTROLLER . "Admin\\SessionController@store", "before" => "csrf"]);
+    Route::get('logout', ["as" => 'logout',        "uses"  => CONTROLLER . "Admin\\SessionController@destroy"]);
 
+    Route::group(["before" => "auth"], function () {
+        Route::get('dashboard', ["as" => 'dashboard', "uses" => CONTROLLER . "Admin\\DashboardController@index"]);
+
+    });
 });
