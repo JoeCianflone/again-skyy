@@ -1,0 +1,36 @@
+.masthead {
+   background: transparent image-url("bg-masthead.png") 0 0 no-repeat;
+   color: $white;
+   height: image-height("bg-masthead.png");
+   padding-top: 22px;
+
+   a {
+      @include font-size(18px);
+      color: $white;
+      &:hover {
+         text-decoration: none;
+      }
+   }
+   p {
+      @include font-size(14px);
+      margin: 0 23px;
+   }
+   .logo {
+      background: transparent image-url("logo.png") 0 0 no-repeat;
+      height: image-height("logo.png");
+      margin: 0 auto 10px auto;
+      width: image-width("logo.png");
+   }
+   .social-masthead {
+      margin-top: 19px;
+
+      a {
+         @include font-size(22px);
+      }
+      li {
+         padding-left: 5px;
+         padding-right: 5px;
+      }
+
+   }
+}

@@ -1,0 +1,17 @@
+body {
+   background: $black;
+   font: {
+      family: $font-stack;
+      weight: 300;
+   }
+}
+.container {
+   margin: 0 auto;
+   width: $site-full-width;
+}
+
+.page-header {
+   border: none;
+   color: $white;
+   text-transform: uppercase;
+}

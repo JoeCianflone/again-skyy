@@ -1,2 +1,23 @@
+// Compass and Bootstrap Base Sass...
+// Do not mess with these
 @import "compass/css3";
-@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/normalize";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/grid";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/type";
+@import "../../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/utilities";
+
+@import "partials/variables";
+
+@import "partials/mixins";
+
+@import "partials/globals";
+
+@import "partials/masthead";
+
+@import "partials/media";
+
+@import "partials/footer";
+
