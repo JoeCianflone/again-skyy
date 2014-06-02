@@ -1,0 +1,6 @@
++ switched out the you tube icon for the main you tube icon -- I did this because I'm able to use FontAwesome for the icons instead of having to cut images.  This means I don't need you guys to supply me with Retina images and it loads a lot faster...and all the other icons are fonts so it just made sense to me.
++ I used a CSS grid system -- this allowed me to quickly build all the different elements, but it means I'm not 100% pixel perfect on some of the alignments.  
++ You can't vertically center in all browsers in a consistent manner yet.  In a couple of years, this shouldn't be a problem, but for now it is.  Because this data is variable in length and the font might be changing, I needed to not vertically center the content.  The paddings should be fine on the top and sides though.
++ Check out the attached image...is that a mistake?  It looks like you have two gradients in that image and they are transitioning at different rates or something...it just looks like a mistake and I'm not sure if I should cut that out or keep it in.  
++ I need all the social media information
++ See image 2: is that a mistake?  There again seems to be a hard edge in the image when everything else seems to be more of a gradient transition.   
