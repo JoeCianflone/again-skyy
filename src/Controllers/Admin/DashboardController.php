@@ -1,8 +1,18 @@
 <?php
 namespace Cianflone\Again\Controllers\Admin;
 
+use View;
+use Cianflone\Again\CommandBus\CommandBus;
+use Cianflone\Again\Shows\GetAllShowsCommand;
+
 class DashboardController extends BaseController
 {
+    protected $command;
+
+    public function __construct(CommandBus $command)
+    {
+        $this->command = $command;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -10,7 +20,12 @@ class DashboardController extends BaseController
      */
     public function index()
     {
-        echo "hello";
+        $command = new GetAllShowsCommand();
+        $shows = $this->command->execute($command);
+
+        return View::make('admin.pages.dashboard.index')->with([
+            'shows' => $shows
+        ]);
     }
 
     /**
@@ -20,7 +35,7 @@ class DashboardController extends BaseController
      */
     public function create()
     {
-        //
+        return View::make('admin.pages.dashboard.create');
     }
 
     /**

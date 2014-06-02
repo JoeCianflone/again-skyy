@@ -8,6 +8,7 @@
     </head>
     <body class="@yield('signature', 'basic')">
       <div class="container">
+         @include('admin.partials.masthead-navigation')
          @include ('admin.partials.flash-message')
          @yield('main-content')
       </div>
