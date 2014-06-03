@@ -16,5 +16,6 @@ Route::group(['prefix' => 'admin/v1/panel'], function () {
 
         Route::get('dashboard/create', ["as" => 'dashboard.create', "uses" => CONTROLLER . "Admin\\DashboardController@create"]);
         Route::get('dashboard/edit/{showId}', ["as" => 'dashboard.edit', "uses" => CONTROLLER . "Admin\\DashboardController@edit"]);
+        Route::delete('dashboard/delete/{showId}', ["as" => 'dashboard.delete', "uses" => CONTROLLER . "Admin\\DashboardController@destroy"]);
     });
 });

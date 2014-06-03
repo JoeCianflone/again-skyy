@@ -108,7 +108,7 @@ class DashboardController extends BaseController
      * @param  int      $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($showId)
     {
         //
     }

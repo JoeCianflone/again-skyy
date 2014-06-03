@@ -23,7 +23,7 @@
             <td>{{ $show['id']}} </td>
             <td>{{ $show['headliner']}} </td>
             <td>{{ link_to_route('dashboard.edit', 'Edit', ["showId" => $show['id']], "") }}</td>
-            <td>Delete</td>
+            <td>{{ link_to_route('dashboard.delete', 'Delete', ["showId" => $show['id']], "") }}</td>
          </tr>
       @endforeach
 
