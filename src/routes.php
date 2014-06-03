@@ -15,6 +15,6 @@ Route::group(['prefix' => 'admin/v1/panel'], function () {
         Route::post('dashboard', ["as" => 'dashboard.store', "uses" => CONTROLLER . "Admin\\DashboardController@store", "before" => "csrf"]);
 
         Route::get('dashboard/create', ["as" => 'dashboard.create', "uses" => CONTROLLER . "Admin\\DashboardController@create"]);
-
+        Route::get('dashboard/edit/{showId}', ["as" => 'dashboard.edit', "uses" => CONTROLLER . "Admin\\DashboardController@edit"]);
     });
 });

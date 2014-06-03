@@ -5,23 +5,31 @@
 @section('main-content')
    <h1 class="page-header">Dashboard - View All Shows</h1>
    {{ link_to_route('dashboard.create', 'Add New', '', ['class' => 'btn btn-primary']) }}
-   <table class="table table-striped">
+   @if (count($shows) <= 0)
+      <p><br><strong>Sorry, No shows scheduled yet...</strong></p>
+   @else
+    <table class="table table-striped">
       <thead>
          <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Headline</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
          </tr>
       </thead>
       <tbody>
-      <tr>
-         <td>1</td>
-         <td>Headline</td>
-         <td>Edit</td>
-         <td>Delete</td>
-      </tr>
+      @foreach ($shows as $show)
+         <tr>
+            <td>{{ $show['id']}} </td>
+            <td>{{ $show['headliner']}} </td>
+            <td>{{ link_to_route('dashboard.edit', 'Edit', ["showId" => $show['id']], "") }}</td>
+            <td>Delete</td>
+         </tr>
+      @endforeach
+
       </tbody>
    </table>
+   @endif
+
 
 @stop

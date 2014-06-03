@@ -1,7 +1,7 @@
 <?php
 namespace Cianflone\Again\Entities;
 
-class Show extends BaseEntitiy
+class Show extends BaseEntity
 {
     protected $table ='dashboard';
 

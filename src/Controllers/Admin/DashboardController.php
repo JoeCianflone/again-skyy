@@ -2,15 +2,22 @@
 namespace Cianflone\Again\Controllers\Admin;
 
 use View;
+use Input;
+use Flash;
+use Redirect;
+use Cianflone\Again\Exceptions\UnableToCreateNewShowException;
+use Cianflone\Again\Exceptions\ShowDoesNotExistException;
 use Cianflone\Again\CommandBus\CommandBus;
-use Cianflone\Again\Shows\GetAllShowsCommand;
+use Cianflone\Again\Repositories\ShowRepository;
 
 class DashboardController extends BaseController
 {
     protected $command;
+    protected $show;
 
-    public function __construct(CommandBus $command)
+    public function __construct(CommandBus $command, ShowRepository $show)
     {
+        $this->show = $show;
         $this->command = $command;
     }
     /**
@@ -20,8 +27,7 @@ class DashboardController extends BaseController
      */
     public function index()
     {
-        $command = new GetAllShowsCommand();
-        $shows = $this->command->execute($command);
+        $shows = $this->show->findAllShows();
 
         return View::make('admin.pages.dashboard.index')->with([
             'shows' => $shows
@@ -45,7 +51,12 @@ class DashboardController extends BaseController
      */
     public function store()
     {
-        //
+        $inputs = Input::except('_token');
+        try {
+            $this->show->createNewShow($inputs);
+        } catch (UnableToCreateNewShowException $e) {
+
+        }
     }
 
     /**
@@ -65,9 +76,19 @@ class DashboardController extends BaseController
      * @param  int      $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($showId)
     {
-        //
+        try {
+            $show = $this->show->get($showId);
+        } catch (ShowDoesNotExistException $e) {
+            Flash::error($e->getMessage());
+
+            return Redirect::route('dashboard');
+        }
+
+        return View::make('admin.pages.dashboard.edit')->with([
+            'show' => $show
+        ]);
     }
 
     /**

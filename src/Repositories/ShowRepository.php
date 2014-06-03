@@ -10,4 +10,6 @@ interface ShowRepository
     public function delete($showId);
 
     public function get($showId);
+
+    public function createNewShow(array $show);
 }
