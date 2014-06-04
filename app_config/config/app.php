@@ -2,6 +2,7 @@
 
 return array(
 
+    'cipher' => MCRYPT_RIJNDAEL_256,
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -13,7 +14,7 @@ return array(
     |
     */
 
-    'debug' => getenv('DEBUG'),
+    'debug' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -121,6 +122,7 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Cianflone\Again\Notifications\FlashServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
     ),
 
     /*
@@ -187,6 +189,7 @@ return array(
         'Validator'       => 'Illuminate\Support\Facades\Validator',
         'View'            => 'Illuminate\Support\Facades\View',
         'Flash'           => 'Cianflone\Again\Notifications\Flash',
+        'Image'           => 'Intervention\Image\Facades\Image',
     ),
 
 );

@@ -8,7 +8,7 @@
     </head>
     <body class="@yield('signature', 'main-page')">
         @include('front.partials.browser-warning')
-        <div class="container" style="border: 1px solid red;">
+        <div class="container">
            <header class="masthead row">
               <div class="col-md-10 col-md-offset-1">
                  <h1 class="logo text-hide">Skyy Stream \ Boiler Room</h1>
@@ -32,7 +32,7 @@
               </div>
            </div>
            <footer class="row">
-              <div class="col-md-10 col-md-offset-1" style="border: 1px solid red;">
+              <div class="col-md-10 col-md-offset-1">
                  <h2 class="page-header text-center">ABOUT BOILER ROOM</h2>
                  <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id commodo metus. Cras at placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id commodo metus. Cras at placerat. </p>
               </div>

@@ -8,28 +8,56 @@
       </div>
    </div>
    <div class="row">
-      <div class="col-md-10 col-md-offset-1 no-data">
-         <div class="media-no-data">
-            <div class="show-number pull-left">
-               SHOW<br>#2
-            </div>
-            <div class="pull-right">
-               <div class="show-content row">
-                  <div class="col-md-8">
-                     <h4 class="media-heading">Alice Glass, Vatican Shadow<br>&amp; Brogen bentley</h4>
-                     <h5>A smaller element...</h5>
-                     <p class="show-location">San Francisco, CA</p>
+      <div class="column" style="width: 92%; margin: 0 auto;">
+
+         <?php $i = 0; ?>
+         @foreach ($shows as $show)
+            <?php $i += 1; ?>
+            @if ($show['is_live'])
+               <div class="media-is-live clearfix">
+                  <img src="{{$show['main_image']}}" alt="" class="pull-left">
+                  <div class="right-content pull-right">
+                     <div class="knockout">
+                        <p>{{$show['show_date']}} - {{$show['show_location']}}</p>
+                        <h4 class="media-heading">{{$show['headliner']}}</h4>
+                        @if ($show['supporting_cast'] !== '')
+                           <h5>{{$show['supporting_cast']}}</h5>
+                        @endif
+                        <p>{{$show['show_time']}}</p>
+                     </div>
+                     <p>{{$show['description']}}</p>
                   </div>
-                  <div class="col-md-4">
-                     <p class="datetime text-right">
-                        6.14.2014<br>
-                        6-9pm PDT
-                    </p>
+                  <ul class="list-inline bottom-buttons">
+                     <li><a href="{{$show['show_link']}}"><img src="/assets/imgs/btn-watch.png" alt=""></a></li>
+                     <li><a href="{{$show['save_the_date']}}"><img src="/assets/imgs/btn-save.png" alt=""></a></li>
+                  </ul>
+               </div>
+            @else
+            <div class="media-no-data clearfix">
+               <div class="show-number pull-left">
+                  SHOW<br>#{{$i}}
+               </div>
+               <div class="pull-right">
+                  <div class="show-content row">
+                     <div class="col-md-8">
+                        <h4 class="media-heading">{{$show['headliner']}}</h4>
+                        @if ($show['supporting_cast'] !== '')
+                           <h5>{{$show['supporting_cast']}}</h5>
+                        @endif
+                        <p class="show-location">{{$show['show_location']}}</p>
+                     </div>
+                     <div class="col-md-4">
+                        <p class="datetime text-right">
+                           {{$show['show_date']}}<br>
+                           {{$show['show_time']}}
+                       </p>
+                     </div>
                   </div>
                </div>
-
             </div>
-         </div>
+            @endif
+         @endforeach
+
       </div>
    </div>
 @stop

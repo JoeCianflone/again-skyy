@@ -3,6 +3,7 @@ namespace Cianflone\Again\Repositories\Eloquent;
 
 use Cianflone\Again\Entities\Show;
 use Cianflone\Again\Exceptions\ShowDoesNotExistException;
+use Cianflone\Again\Exceptions\UnableToDeleteShowException;
 use Cianflone\Again\Repositories\ShowRepository;
 
 class EloquentShowRepository implements ShowRepository
@@ -24,9 +25,24 @@ class EloquentShowRepository implements ShowRepository
 
     }
 
+    public function update($showId, array $show)
+    {
+        $currentShow = $this->show->find($showId);
+        foreach ($show as $key => $value) {
+            $currentShow->{$key} = $value;
+        }
+
+        $currentShow->save();
+
+    }
+
     public function delete($showId)
     {
-
+        try {
+            return $this->show->destroy($showId);
+        } catch (ShowDoesNotExistException $e) {
+            throw new UnableToDeleteShowException('Show ID does not exist');
+        }
     }
 
     public function get($showId)

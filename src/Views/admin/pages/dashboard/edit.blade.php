@@ -5,9 +5,17 @@
 @section('main-content')
    <h1 class="page-header">Dashboard - Edit Show</h1>
    <div class="row">
-      {{ Form::open(['route' => 'dashboard.store', 'method' => 'post', 'class' =>'form-signin col-md-6', 'role' => 'form']) }}
-         <button class="btn btn-sm btn-primary pull-right" type="submit">Update the Show</button>
-         <p>Image Upload here...</p>
+      {{ Form::open(['route' => ['dashboard.update', $show['id']], 'files' => true, 'method' => 'put', 'class' =>'form-signin col-md-6', 'role' => 'form']) }}
+         <div class="form-group clearfix">
+            <div class="pull-left">
+               <label for="main_image">Upload An Image</label>
+               <input type="file" name="main_image">
+            </div>
+            @if ($show['main_image'] !== '' && !is_null($show['main_image']))
+               <p class="text-right"><strong>Preview: </strong></p>
+               <img class="pull-right" src="{{$show['main_image']}}" alt="Preview" height="150">
+            @endif
+         </div>
          <div class="form-group">
             <label for="headliner">Headliner</label>
             {{ Form::text("headliner", $show["headliner"], ["class" => "form-control", "autofocus"=>"autofocus"]) }}
@@ -34,7 +42,7 @@
          </div>
          <div class="form-group">
             <label for="email">Show Link</label>
-            {{ Form::text("headline", $show["show_link"], ["class" => "form-control"]) }}
+            {{ Form::text("show_link", $show["show_link"], ["class" => "form-control"]) }}
          </div>
          <div class="form-group">
             <label for="show_link">Save the date</label>
@@ -42,7 +50,7 @@
          </div>
          <div class="form-group">
             <label class="checkbox-inline">
-               <input type="checkbox" id="is_live" name="is_live" value="option1"> Make active?
+               <input type="checkbox" id="is_live" name="is_live" value="true"> Make active?
             </label>
             <button class="btn btn-sm btn-primary pull-right" type="submit">Update the Show</button>
          </div>

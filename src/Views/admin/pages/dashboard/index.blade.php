@@ -23,7 +23,13 @@
             <td>{{ $show['id']}} </td>
             <td>{{ $show['headliner']}} </td>
             <td>{{ link_to_route('dashboard.edit', 'Edit', ["showId" => $show['id']], "") }}</td>
-            <td>{{ link_to_route('dashboard.delete', 'Delete', ["showId" => $show['id']], "") }}</td>
+            <td>
+               {{Form::open(['route' => ['dashboard.delete', $show['id']], 'method' => 'delete']) }}
+                  <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+               {{Form::close()}}
+
+
+            </td>
          </tr>
       @endforeach
 

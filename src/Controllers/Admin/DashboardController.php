@@ -6,6 +6,7 @@ use Input;
 use Flash;
 use Redirect;
 use Cianflone\Again\Exceptions\UnableToCreateNewShowException;
+use Cianflone\Again\Exceptions\UnableToDeleteShowException;
 use Cianflone\Again\Exceptions\ShowDoesNotExistException;
 use Cianflone\Again\CommandBus\CommandBus;
 use Cianflone\Again\Repositories\ShowRepository;
@@ -52,11 +53,23 @@ class DashboardController extends BaseController
     public function store()
     {
         $inputs = Input::except('_token');
+        if (Input::hasFile("main_image")) {
+            $destinationPath = "../public/assets/imgs/uploads";
+            $filename = Input::file('main_image')->getClientOriginalName();
+            $extension = Input::file('main_image')->getClientOriginalExtension();
+            $file = Input::file('main_image')->move($destinationPath, $filename);
+            $inputs['main_image'] = asset("/assets/imgs/uploads/{$filename}");
+        }
         try {
             $this->show->createNewShow($inputs);
         } catch (UnableToCreateNewShowException $e) {
+            Flash::error($e->getMessage());
 
+            return Redirect::route('dashboard');
         }
+            Flash::message("Show successfully created");
+
+            return Redirect::route('dashboard');
     }
 
     /**
@@ -97,9 +110,26 @@ class DashboardController extends BaseController
      * @param  int      $id
      * @return Response
      */
-    public function update($id)
+    public function update($showId)
     {
-        //
+
+        $inputs = Input::except(["_token", "_method"]);
+
+        if (array_key_exists('is_live', $inputs) && $inputs['is_live'] == 'true') {
+            $inputs['is_live'] = true;
+        }
+        if (Input::hasFile("main_image")) {
+            $destinationPath = "../public/assets/imgs/uploads";
+            $filename = Input::file('main_image')->getClientOriginalName();
+            $extension = Input::file('main_image')->getClientOriginalExtension();
+            $file = Input::file('main_image')->move($destinationPath, $filename);
+            $inputs['main_image'] = asset("/assets/imgs/uploads/{$filename}");
+        }
+        $this->show->update($showId, $inputs);
+
+        Flash::success('Updated');
+
+        return Redirect::route('dashboard');
     }
 
     /**
@@ -110,7 +140,15 @@ class DashboardController extends BaseController
      */
     public function destroy($showId)
     {
-        //
+        try {
+            $this->show->delete($showId);
+        } catch (UnableToDeleteShowException $e) {
+            Flash::error($e->getMessage());
+            Redirect::route('dashboard');
+        }
+        Flash::message('Successfully deleted that show');
+
+        return Redirect::route('dashboard');
     }
 
 }

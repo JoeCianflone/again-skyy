@@ -4,21 +4,22 @@
    @include background-image (linear-gradient(90deg, rgb(28, 36, 221) 115px, rgb(255, 255, 255) 116px));
    min-height: 100px;
    -webkit-transform-style: preserve-3d;
-   margin: 0 0 25px 0;
+   margin: 0 0 10px 0;
 
    .show-number {
       @include font-size(22px);
+      font-family: $roman-bold;
       color: $white;
-      padding: 25px 20px 0 0;
-      font-weight: bold;
-      line-height: 0.9;
+      padding: 32px 20px 0 0;
+      font-weight: 400;
+      line-height: 1;
       text-align: right;
       text-transform: uppercase;
-      width: 116px;
+      width: 104px;
    }
    .show-content {
       padding: 25px 20px 10px 20px;
-      width: 556px;
+      width: 639px;
       .col-md-8 {
          padding: 0;
       }
@@ -49,6 +50,33 @@
          padding: 0;
          margin: 0;
          line-height: 0.9;
+      }
+   }
+}
+
+.media-is-live {
+   @include clearfix();
+   position: relative;
+   background: $white;
+   margin: 0 0 46px 0;
+   .right-content {
+      margin: 29px 40px 20px 0;
+      width: 307px;
+      .knockout {
+         font-family: $roman-bold;
+         font-weight: 400;
+         background: $black;
+         padding: 12px;
+         color: $white;
+      }
+   }
+   .bottom-buttons {
+      position: absolute;
+      bottom: -17px;
+      left: 25px;
+      margin: 0;
+      li:last-child {
+         margin-left: 54px;
       }
    }
 }

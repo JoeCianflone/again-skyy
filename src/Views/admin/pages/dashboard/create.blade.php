@@ -5,8 +5,11 @@
 @section('main-content')
    <h1 class="page-header">Dashboard - Create New</h1>
    <div class="row">
-      {{ Form::open(['route' => 'dashboard.store', 'method' => 'post', 'class' =>'form-signin col-md-6', 'role' => 'form']) }}
-         <p>Image Upload here...</p>
+      {{ Form::open(['route' => 'dashboard.store', 'files'=>true, 'method' => 'post', 'class' =>'form-signin col-md-6', 'role' => 'form']) }}
+         <div class="form-group">
+            <label for="main_image">Upload An Image</label>
+            <input type="file" name="main_image">
+         </div>
          <div class="form-group">
             <label for="headliner">Headliner</label>
             {{ Form::text("headliner", Input::old('headliner'), ["class" => "form-control", "autofocus"=>"autofocus"]) }}
@@ -41,7 +44,7 @@
          </div>
          <div class="form-group">
             <label class="checkbox-inline">
-               <input type="checkbox" id="is_live" name="is_live" value="option1"> Make active?
+               <input type="checkbox" id="is_live" name="is_live" value="true"> Make active?
             </label>
             <button class="btn btn-sm btn-primary pull-right" type="submit">Create This Show</button>
          </div>

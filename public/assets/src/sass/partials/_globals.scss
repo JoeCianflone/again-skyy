@@ -11,7 +11,10 @@ body {
 }
 
 .page-header {
+   @include font-size(29px);
+   font-family: $roman;
    border: none;
    color: $white;
    text-transform: uppercase;
+   margin: 38px 0 20px;
 }

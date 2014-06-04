@@ -1,3 +1,7 @@
+//@import url("//hello.myfonts.net/count/2b1257");
+@font-face {font-family: 'SoinSans-Roman';src: font-url('2B1257_0_0.eot');src: font-url('2B1257_0_0.eot?#iefix') format('embedded-opentype'),font-url('2B1257_0_0.woff') format('woff'),font-url('2B1257_0_0.ttf') format('truetype');}
+@font-face {font-family: 'SoinSans-Bold';src: font-url('2B1257_1_0.eot');src: font-url('2B1257_1_0.eot?#iefix') format('embedded-opentype'),font-url('2B1257_1_0.woff') format('woff'),font-url('2B1257_1_0.ttf') format('truetype');}
+
 $experimental-support-for-svg: true;
 
 $black: #000;
@@ -8,3 +12,5 @@ $gray: #565656;
 
 $site-full-width: 810px;
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$roman: 'SoinSans-Roman';
+$roman-bold: 'SoinSans-Bold';
