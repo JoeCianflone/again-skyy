@@ -24,7 +24,7 @@
                         @endif
                         <p>{{$show['show_time']}}</p>
                      </div>
-                     <p>{{$show['description']}}</p>
+                     <p class="description">{{$show['description']}}</p>
                   </div>
                   <ul class="list-inline bottom-buttons">
                      <li><a href="{{$show['show_link']}}"><img src="/assets/imgs/btn-watch.png" alt=""></a></li>
