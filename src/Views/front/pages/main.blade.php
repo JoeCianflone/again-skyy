@@ -34,7 +34,7 @@
             @else
             <div class="media-no-data clearfix">
                <div class="show-number pull-left">
-                  SHOW<br>#{{$i}}
+                  SHOW <br>#{{$i}}
                </div>
                <div class="pull-right">
                   <div class="show-content row">
@@ -46,9 +46,16 @@
                         <p class="show-location">{{$show['show_location']}}</p>
                      </div>
                      <div class="col-md-4">
-                        <p class="datetime text-right">
+                        <p class="datetime text-right big">
                            {{$show['show_date']}}<br>
                            {{$show['show_time']}}
+                       </p>
+                        <p class="datetime text-left small">
+                           {{$show['show_date']}}
+                           @if ($show['show_time'] !== '' && !is_null($show['show_time']))
+                              &#124;
+                              {{$show['show_time']}}
+                           @endif
                        </p>
                      </div>
                   </div>
