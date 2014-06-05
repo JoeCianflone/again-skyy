@@ -9,7 +9,6 @@
    </div>
    <div class="row">
       <div class="column" style="width: 92%; margin: 0 auto;">
-
          <?php $i = 0; ?>
          @foreach ($shows as $show)
             <?php $i += 1; ?>
@@ -57,7 +56,6 @@
             </div>
             @endif
          @endforeach
-
       </div>
    </div>
 @stop

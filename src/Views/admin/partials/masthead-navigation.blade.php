@@ -13,7 +13,6 @@
       <div class="navbar-collapse collapse pull-right">
          <ul class="nav navbar-nav">
             <li class="active"><a href="/admin/v1/panel/dashboard">Dashboard</a></li>
-            <li><a href="/admin/v1/panel/users">Users Admin</a></li>
             <li><a href="/admin/v1/panel/logout">Logout</a></li>
          </ul>
       </div>
