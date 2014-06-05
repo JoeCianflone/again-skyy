@@ -7,6 +7,14 @@
         @include('front.partials.head')
     </head>
     <body class="@yield('signature', 'main-page')">
+   <div id="fb-root"></div>
+   <script>(function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));</script>
         @include('front.partials.browser-warning')
         <div class="container">
            <header class="masthead row">
@@ -32,15 +40,27 @@
                  <div class="buckets clearfix">
                     <div class="bucket">
                        <div class="icon facebook hide-text"><img src="/assets/imgs/icon-facebook.png" alt=""></div>
+                       <div class="button-container facebook">
+                          <div class="fb-like" data-href="https://www.facebook.com/skyyvodka" data-width="2000" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                       </div>
                     </div>
                     <div class="bucket">
                        <div class="icon twitter hide-text"><img src="/assets/imgs/icon-twitter.png" alt=""></div>
+                       <div class="button-container twitter">
+                           <a href="https://twitter.com/skyyvodka" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @skyyvodka</a>
+                           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                       </div>
                     </div>
                     <div class="bucket">
                        <div class="icon instagram hide-text"><img src="/assets/imgs/icon-instagram.png" alt=""></div>
                     </div>
                     <div class="bucket">
                        <div class="icon pinterest hide-text"><img src="/assets/imgs/icon-pinterest.png" alt=""></div>
+                       <div class="button-container pinterest">
+                           <a data-pin-do="buttonFollow" href="http://www.pinterest.com/skyyvodka/">Follow SKYY Vodka</a>
+                           <!-- Please call pinit.js only once per page -->
+                           <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+                       </div>
                     </div>
                  </div>
               </div>

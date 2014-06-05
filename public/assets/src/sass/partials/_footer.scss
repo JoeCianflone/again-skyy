@@ -40,6 +40,23 @@
    }
 }
 
+.button-container {
+   position: absolute;
+   top: 30px;
+   &.facebook {
+      left: 24px;
+   }
+   &.twitter {
+      left: 19px;
+   }
+   &.instagram {
+
+   }
+   &.pinterest {
+   left: 25px;
+   }
+}
+
 footer {
    @include font-size(13px);
    color: $white;
