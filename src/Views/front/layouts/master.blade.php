@@ -26,13 +26,27 @@
            @yield('content')
 
            <div class="row">
-              <div class="col-md-10 col-md-offset-1">
+              <div class="column bottom-social" style="width: 92%; margin: 0 auto;">
                  <h2 class="page-header text-center">FOLLOW US</h2>
                  <p class="text-center">Follow us on all our social channels to get even more exclusive SKYY Stream content!</p>
+                 <div class="buckets clearfix">
+                    <div class="bucket">
+                       <div class="icon facebook hide-text"><img src="/assets/imgs/icon-facebook.png" alt=""></div>
+                    </div>
+                    <div class="bucket">
+                       <div class="icon twitter hide-text"><img src="/assets/imgs/icon-twitter.png" alt=""></div>
+                    </div>
+                    <div class="bucket">
+                       <div class="icon instagram hide-text"><img src="/assets/imgs/icon-instagram.png" alt=""></div>
+                    </div>
+                    <div class="bucket">
+                       <div class="icon pinterest hide-text"><img src="/assets/imgs/icon-pinterest.png" alt=""></div>
+                    </div>
+                 </div>
               </div>
            </div>
            <footer class="row">
-              <div class="col-md-10 col-md-offset-1">
+              <div class="column" style="width: 64%; margin: 0 auto;">
                  <h2 class="page-header text-center">ABOUT BOILER ROOM</h2>
                  <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id commodo metus. Cras at placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id commodo metus. Cras at placerat. </p>
               </div>

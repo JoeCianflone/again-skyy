@@ -1,4 +1,48 @@
+.bottom-social {
+   background: transparent image-url("bg-bottom-social.png") 0 0 no-repeat;
+   color: $white;
+   .page-header {
+      padding: 35px 0 6px;
+   }
+}
+.buckets {
+   margin-top: 54px;
+   padding-bottom: 50px;
+}
+.bucket {
+   @extend .pull-left;
+   background: $white;
+   position: relative;
+   height: 63px;
+   width: 174px;
+   margin-right: 16px;
+   &:first-child {
+      margin-left: 0;
+   }
+   &:last-child {
+      margin-right: 0;
+   }
+   .icon {
+      position: absolute;
+      top: -20px;
+      &.facebook {
+         left: (174px / 2) - image-width("icon-facebook.png") / 2;
+      }
+      &.twitter {
+         left: (174px / 2) - image-width("icon-twitter.png") / 2;
+      }
+      &.instagram {
+         left: (174px / 2) - image-width("icon-instagram.png") / 2;
+      }
+      &.pinterest {
+         left: (174px / 2) - image-width("icon-pinterest.png") / 2;
+      }
+   }
+}
+
+
 footer {
    @include font-size(13px);
    color: $white;
+   padding-bottom: 60px;
 }
