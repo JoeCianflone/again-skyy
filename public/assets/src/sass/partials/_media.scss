@@ -56,12 +56,21 @@
 
 .media-is-live {
    @include clearfix();
+
    position: relative;
    background: $white;
    margin: 0 0 46px 0;
+   img {
+      width: 100%;
+   }
    .right-content {
       margin: 29px 40px 20px 0;
       width: 307px;
+      @include breakpoint() {
+         display: block !important;
+         width: 258px;
+         margin: 18px;
+      }
       p.description {
          @include font-size(12px);
          color: $gray;
@@ -87,8 +96,19 @@
       bottom: -17px;
       left: 25px;
       margin: 0;
+      @include breakpoint() {
+         position: relative;
+         bottom: 0;
+         left: 0;
+         li {
+            margin-bottom: 15px;
+         }
+      }
       li:last-child {
          margin-left: 54px;
+         @include breakpoint() {
+            margin-left: 0;
+         }
       }
    }
 }

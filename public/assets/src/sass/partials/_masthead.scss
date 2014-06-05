@@ -3,7 +3,10 @@
    color: $white;
    height: image-height("bg-masthead.png");
    padding-top: 22px;
-
+   @include breakpoint() {
+      background: transparent image-url("m/bg-masthead.png") 0 0 no-repeat;
+      height: image-height("m/bg-masthead.png");
+   }
    a {
       @include font-size(18px);
       color: $white;
@@ -14,12 +17,22 @@
    p {
       @include font-size(14px);
       margin: 0 23px;
+      @include breakpoint() {
+         @include font-size(16px);
+         line-height: 2.2;
+         margin-top: 35px;
+      }
    }
    .logo {
       background: transparent image-url("logo.png") 0 0 no-repeat;
       height: image-height("logo.png");
       margin: 0 auto 10px auto;
       width: image-width("logo.png");
+      @include breakpoint() {
+         background: transparent image-url("m/logo.png") 0 0 no-repeat;
+         height: image-height("m/logo.png");
+         width: image-width("m/logo.png");
+      }
    }
    .social-masthead {
       margin-top: 19px;

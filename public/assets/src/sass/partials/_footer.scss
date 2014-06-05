@@ -4,6 +4,16 @@
    .page-header {
       padding: 35px 0 6px;
    }
+   .follow-text {
+      @include breakpoint() {
+         @include font-size(13px);
+         margin-left: 15px;
+         margin-right: 15px;
+      }
+   }
+   @include breakpoint() {
+      background: transparent image-url("m/bg-bottom-social.png") 0 0 no-repeat;
+   }
 }
 .buckets {
    margin-top: 54px;
@@ -16,26 +26,46 @@
    height: 63px;
    width: 174px;
    margin-right: 16px;
+
    &:first-child {
       margin-left: 0;
    }
    &:last-child {
       margin-right: 0;
    }
+   @include breakpoint() {
+      width: 265px;
+      margin: 0 0 30px 14px;
+      &:first-child {
+         margin: 0 0 30px 14px;
+      }
+   }
    .icon {
       position: absolute;
       top: -20px;
       &.facebook {
-         left: (174px / 2) - image-width("icon-facebook.png") / 2;
+         @include center(174px, "icon-facebook.png");
+         @include breakpoint() {
+            @include center(265px, "icon-facebook.png");
+         }
       }
       &.twitter {
-         left: (174px / 2) - image-width("icon-twitter.png") / 2;
+         @include center(174px, "icon-twitter.png");
+         @include breakpoint() {
+            @include center(265px, "icon-twitter.png");
+         }
       }
       &.instagram {
-         left: (174px / 2) - image-width("icon-instagram.png") / 2;
+         @include center(174px, "icon-instagram.png");
+         @include breakpoint() {
+            @include center(265px, "icon-instagram.png");
+         }
       }
       &.pinterest {
-         left: (174px / 2) - image-width("icon-pinterest.png") / 2;
+         @include center(174px, "icon-pinterest.png");
+         @include breakpoint() {
+            @include center(265px, "icon-pinterest.png");
+         }
       }
    }
 }
@@ -45,15 +75,24 @@
    top: 30px;
    &.facebook {
       left: 24px;
+      @include breakpoint() {
+         left: 84px;
+      }
    }
    &.twitter {
       left: 19px;
+      @include breakpoint() {
+         left: 67px;
+      }
    }
    &.instagram {
 
    }
    &.pinterest {
-   left: 25px;
+      left: 25px;
+      @include breakpoint() {
+         left: 72px;
+      }
    }
 }
 

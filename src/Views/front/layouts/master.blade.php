@@ -36,7 +36,7 @@
            <div class="row">
               <div class="column bottom-social" style="width: 92%; margin: 0 auto;">
                  <h2 class="page-header text-center">FOLLOW US</h2>
-                 <p class="text-center">Follow us on all our social channels to get even more exclusive SKYY Stream content!</p>
+                 <p class="text-center follow-text">Follow us on all our social channels to get even more exclusive SKYY Stream content!</p>
                  <div class="buckets clearfix">
                     <div class="bucket">
                        <div class="icon facebook hide-text"><img src="/assets/imgs/icon-facebook.png" alt=""></div>

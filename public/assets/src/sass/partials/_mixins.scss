@@ -65,3 +65,11 @@
    -ms-transform: translateY(-50%);
    transform: translateY(-50%);
 }
+
+@mixin breakpoint() {
+    @media (max-width: 480px)  { @content; }
+}
+
+@mixin center($width, $image) {
+   left: ($width / 2) - image-width($image) / 2;
+}
