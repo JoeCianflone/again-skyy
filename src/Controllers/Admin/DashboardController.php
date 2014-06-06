@@ -58,7 +58,7 @@ class DashboardController extends BaseController
             $filename = Input::file('main_image')->getClientOriginalName();
             $extension = Input::file('main_image')->getClientOriginalExtension();
             $file = Input::file('main_image')->move($destinationPath, $filename);
-            $inputs['main_image'] = asset("/assets/imgs/uploads/{$filename}");
+            $inputs['main_image'] = preg_replace("/(http(s?)\:)/", "", asset("/assets/imgs/uploads/{$filename}"));
         }
         try {
             $this->show->createNewShow($inputs);
@@ -117,13 +117,16 @@ class DashboardController extends BaseController
 
         if (array_key_exists('is_live', $inputs) && $inputs['is_live'] == 'true') {
             $inputs['is_live'] = true;
+        } else {
+             $inputs['is_live'] = false;
         }
+
         if (Input::hasFile("main_image")) {
-            $destinationPath = "../public/assets/imgs/uploads";
-            $filename = Input::file('main_image')->getClientOriginalName();
-            $extension = Input::file('main_image')->getClientOriginalExtension();
-            $file = Input::file('main_image')->move($destinationPath, $filename);
-            $inputs['main_image'] = asset("/assets/imgs/uploads/{$filename}");
+            $destinationPath      = "../public/assets/imgs/uploads";
+            $filename             = Input::file('main_image')->getClientOriginalName();
+            $extension            = Input::file('main_image')->getClientOriginalExtension();
+            $file                 = Input::file('main_image')->move($destinationPath, $filename);
+            $inputs['main_image'] = preg_replace("/(http(s?)\:)/", "", asset("/assets/imgs/uploads/{$filename}"));
         }
         $this->show->update($showId, $inputs);
 

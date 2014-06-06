@@ -36,15 +36,16 @@
          </div>
          <div class="form-group">
             <label for="email">Show Link</label>
-            {{ Form::text("headline", Input::old('headline'), ["class" => "form-control"]) }}
-         </div>
-         <div class="form-group">
-            <label for="show_link">Save the date</label>
             {{ Form::text("show_link", Input::old('show_link'), ["class" => "form-control"]) }}
          </div>
          <div class="form-group">
+            <label for="save_the_date">Save the date</label>
+            {{ Form::text("save_the_date", Input::old('save_the_date'), ["class" => "form-control"]) }}
+         </div>
+         <div class="form-group">
             <label class="checkbox-inline">
-               <input type="checkbox" id="is_live" name="is_live" value="true"> Make active?
+               {{ Form::checkbox('is_live', 'true', Input::old('is_live')) }}
+               Make active?
             </label>
             <button class="btn btn-sm btn-primary pull-right" type="submit">Create This Show</button>
          </div>

@@ -41,16 +41,17 @@
             {{ Form::text("supporting_cast", $show["supporting_cast"], ["class" => "form-control"]) }}
          </div>
          <div class="form-group">
-            <label for="email">Show Link</label>
+            <label for="show_link">Show Link</label>
             {{ Form::text("show_link", $show["show_link"], ["class" => "form-control"]) }}
          </div>
          <div class="form-group">
-            <label for="show_link">Save the date</label>
-            {{ Form::text("show_link", $show["save_the_date"], ["class" => "form-control"]) }}
+            <label for="save_the_date">Save the date</label>
+            {{ Form::text("save_the_date", $show["save_the_date"], ["class" => "form-control"]) }}
          </div>
          <div class="form-group">
             <label class="checkbox-inline">
-               <input type="checkbox" id="is_live" name="is_live" value="true"> Make active?
+               {{ Form::checkbox('is_live', 'true', $show["is_live"]) }}
+               Make active?
             </label>
             <button class="btn btn-sm btn-primary pull-right" type="submit">Update the Show</button>
          </div>

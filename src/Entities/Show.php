@@ -17,4 +17,9 @@ class Show extends BaseEntity
         'save_the_date',
         'is_live'
     ];
+
+    public function getIsLiveAttribute($value)
+    {
+        return $value === '1' ? true : false;
+    }
 }
