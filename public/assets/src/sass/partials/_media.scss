@@ -38,7 +38,14 @@
          margin: 0 20px;
       }
       .col-md-8 {
+         width: 386px;
          padding: 0;
+         float: left;
+         @include breakpoint() {
+            display: block;
+            float: none;
+            width: auto;
+         }
       }
       .media-heading {
          @include font-size(20px);
