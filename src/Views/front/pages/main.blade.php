@@ -29,7 +29,7 @@
                   <ul class="list-inline bottom-buttons">
                      <li><a href="{{$show['show_link']}}"><img src="/assets/imgs/btn-watch.png" alt=""></a></li>
                      <li>
-                        @if ($show['is_over'])
+                        @if (! $show['is_over'])
                            <a href="{{$show['save_the_date']}}"><img src="/assets/imgs/btn-save.png" alt=""></a>
                         @endif
                      </li>
