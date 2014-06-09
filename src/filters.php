@@ -1,8 +1,4 @@
 <?php
-App::before(function ($request) {
-    Response::header('X-Frame-Options', 'ALLOWALL');
-});
-
 Route::filter('auth', function () {
     if (Auth::guest()) {
         Flash::message("Sorry, you're not logged currently, please sign in first");
