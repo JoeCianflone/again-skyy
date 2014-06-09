@@ -70,4 +70,6 @@ require $framework.'/Illuminate/Foundation/start.php';
 |
 */
 
+$app->forgetMiddleware('Illuminate\Http\FrameGuard');
+
 return $app;
