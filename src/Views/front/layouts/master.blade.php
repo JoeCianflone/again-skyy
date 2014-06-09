@@ -15,6 +15,11 @@
      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));</script>
+   <script type="text/javascript">
+      FB.Event.subscribe('edge.create', function(response) {
+          window.top.location.href = 'url';
+      });
+   </script>
         @include('front.partials.browser-warning')
         <div class="container">
            @include('front.partials.masthead')
