@@ -1,4 +1,7 @@
- <?php header("X-Frame-Options: ALLOWALL"); ?>
+ <?php
+ header_remove("X-Frame-Options");
+ header("X-Frame-Options: ALLOWALL");
+ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
