@@ -4,6 +4,9 @@ const CONTROLLER = "Cianflone\\Again\\Controllers\\";
 // General routes .............................................................
 Route::any('/', CONTROLLER . "HomeController@index");
 Route::any('/mobile', CONTROLLER . "HomeController@mobile");
+Route::any('/redirect', function () {
+    return "<script>top.location='http://skyystream.com/mobile'</script>";
+});
 
 // Admin panel stuff here .....................................................
 Route::group(['prefix' => 'admin/v1/panel'], function () {
