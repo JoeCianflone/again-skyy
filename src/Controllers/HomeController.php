@@ -17,6 +17,13 @@ class HomeController extends BaseController
     {
         $shows = $this->show->findAllShows();
 
-        return View::make('front.pages.main')->with(["shows" => $shows]);
+        return View::make('front.pages.main')->with(["shows" => $shows, "is_mobile" => "desktop"]);
+    }
+
+    public function mobile()
+    {
+        $shows = $this->show->findAllShows();
+
+        return View::make('front.pages.main')->with(["shows" => $shows, "is_mobile" => "mobile"]);
     }
 }

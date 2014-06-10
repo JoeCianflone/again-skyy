@@ -1,5 +1,7 @@
 @extends ('front.layouts.master')
-@section('title', 'Add the page title here plz')
+@section('title', 'Skyy')
+
+@section('signature', $is_mobile)
 
 @section('content')
    <div class="row">

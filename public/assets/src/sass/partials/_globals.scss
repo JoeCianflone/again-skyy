@@ -5,13 +5,23 @@ body {
       weight: 300;
    }
 }
-.container {
-   margin: 0 auto;
-   width: $site-full-width;
-   @include breakpoint() {
+
+.desktop {
+   .container {
+      margin: 0 auto;
+      width: $site-full-width;
+      @include breakpoint() {
+         width: 320px;
+      }
+   }
+}
+.mobile {
+   .container {
+      margin: 0 auto;
       width: 320px;
    }
 }
+
 
 .page-header {
    @include font-size(29px);
