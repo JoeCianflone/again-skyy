@@ -8,6 +8,24 @@
     </head>
     <body class="@yield('signature', 'main-page')">
    <div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+FB.init({
+appId : '806961442648829',
+status : true, // check login status
+cookie : true, // enable cookies to allow the server to access the session
+xfbml : true // parse XFBML
+});
+</script>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+FB.Canvas.setSize();
+}
+// Do things that will sometimes call sizeChangeCallback()
+function sizeChangeCallback() {
+FB.Canvas.setSize();
+}
+</script><!--formatted-->
    <script>(function(d, s, id) {
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) return;
@@ -15,11 +33,7 @@
      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));</script>
-   <script type="text/javascript">
-      FB.Event.subscribe('edge.create', function(response) {
-          window.top.location.href = 'url';
-      });
-   </script>
+
         @include('front.partials.browser-warning')
         <div class="container">
            @include('front.partials.masthead')
