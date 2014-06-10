@@ -15,13 +15,6 @@ body {
       }
    }
 }
-.mobile {
-   .container {
-      margin: 0 auto;
-      width: 320px;
-   }
-}
-
 
 .page-header {
    @include font-size(29px);

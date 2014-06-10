@@ -21,3 +21,137 @@
 
 @import "partials/footer";
 
+.mobile {
+   .container {
+      margin: 0 auto;
+      width: 320px;
+   }
+.masthead {
+      background: transparent image-url("m/bg-masthead.png") 0 0 no-repeat;
+      height: image-height("m/bg-masthead.png");
+   }
+   p {
+         @include font-size(16px);
+         line-height: 2.2;
+         margin-top: 35px;
+   }
+   .logo {
+         background: transparent image-url("m/logo.png") 0 0 no-repeat;
+         height: image-height("m/logo.png");
+         width: image-width("m/logo.png");
+   }
+.media-no-data {
+      background: #fff;
+   .show-number {
+         background: rgb(28, 36, 221);
+         display: block !important;
+         width: 100%;
+         padding: 20px 20px 5px 20px;
+         text-align: left;
+         br {
+            display: none;
+         }
+   }
+   .show-content {
+         width: 256px;
+         padding: 10px 0;
+         margin: 0 20px;
+      .col-md-8 {
+            display: block;
+            float: none;
+            width: auto;
+      }
+      .media-heading {
+            padding-bottom: 13px;
+      }
+      .show-location {
+            margin-bottom: 13px;
+      }
+      .col-md-4 {
+            margin: 0 0 15px 0;
+            padding: 0;
+            width: 100%;
+      }
+      .datetime {
+            @include font-size(19px);
+            &.big {
+               display: none;
+            }
+            &.small {
+               display: block;
+            }
+         }
+   }
+}
+
+.media-is-live {
+      margin: 0 0 10px 0;
+   img {
+         width: 100%;
+   }
+   .right-content {
+         display: block !important;
+         width: 258px;
+         margin: 18px;
+      }
+   .bottom-buttons {
+         position: relative;
+         bottom: 0;
+         left: 0;
+         li {
+            margin-bottom: 15px;
+         }
+      li:last-child {
+            margin-left: 0;
+      }
+   }
+}
+
+.bottom-social {
+   .follow-text {
+         @include font-size(13px);
+         margin-left: 15px;
+         margin-right: 15px;
+   }
+      background: transparent image-url("m/bg-bottom-social.png") 0 0 no-repeat;
+}
+.bucket {
+      width: 265px;
+      margin: 0 0 30px 14px;
+      &:first-child {
+         margin: 0 0 30px 14px;
+      }
+   .icon {
+      position: absolute;
+      top: -20px;
+      &.facebook {
+            @include center(265px, "icon-facebook.png");
+      }
+      &.twitter {
+            @include center(265px, "icon-twitter.png");
+      }
+      &.instagram {
+            @include center(265px, "icon-instagram.png");
+      }
+      &.pinterest {
+            @include center(265px, "icon-pinterest.png");
+      }
+   }
+}
+
+.button-container {
+   &.facebook {
+         left: 84px;
+   }
+   &.twitter {
+         left: 67px;
+   }
+   &.instagram {
+      left: 67px;
+   }
+   &.pinterest {
+         left: 72px;
+   }
+}
+
+}

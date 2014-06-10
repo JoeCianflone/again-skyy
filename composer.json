@@ -5,9 +5,7 @@
     "license": "",
     "require": {
         "laravel/framework": "4.2.*",
-        "intervention/image": "dev-master",
-        "league/fractal": "0.8.*",
-        "league/oauth2-server": "3.*"
+        "intervention/image": "dev-master"
     },
    "require-dev": {
       "way/generators": "dev-master",
