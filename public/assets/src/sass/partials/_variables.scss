@@ -2,6 +2,9 @@
 @font-face {font-family: 'SoinSans-Roman';src: font-url('2B1257_0_0.eot');src: font-url('2B1257_0_0.eot?#iefix') format('embedded-opentype'),font-url('2B1257_0_0.woff') format('woff'),font-url('2B1257_0_0.ttf') format('truetype');}
 @font-face {font-family: 'SoinSans-Bold';src: font-url('2B1257_1_0.eot');src: font-url('2B1257_1_0.eot?#iefix') format('embedded-opentype'),font-url('2B1257_1_0.woff') format('woff'),font-url('2B1257_1_0.ttf') format('truetype');}
 
+@import "buttons/*.png";
+$buttons-sprite-dimensions: true;
+
 $experimental-support-for-svg: true;
 
 $black: #000;

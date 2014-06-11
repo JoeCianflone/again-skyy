@@ -118,6 +118,38 @@
          width: 100%;
       }
    }
+   .btn-watch {
+      @include buttons-sprite("btn-watch");
+      @extend .text-hide;
+      display: block;
+      @include breakpoint() {
+         @include buttons-sprite("btn-m-watch");
+         margin-left: 20px;
+      }
+      &:hover,
+      &:active {
+         @include buttons-sprite("btn-watch-roll");
+         @include breakpoint() {
+            @include buttons-sprite("btn-m-watch-roll");
+         }
+      }
+   }
+   .btn-save {
+      @include buttons-sprite("btn-save");
+      @extend .text-hide;
+      display: block;
+      @include breakpoint() {
+         @include buttons-sprite("btn-m-save");
+         margin-left: 20px;
+      }
+      &:hover,
+      &:active {
+         @include buttons-sprite("btn-save-roll");
+         @include breakpoint() {
+            @include buttons-sprite("btn-m-save-roll");
+         }
+      }
+   }
    .right-content {
       margin: 29px 40px 20px 0;
       width: 307px;
@@ -154,16 +186,20 @@
       margin: 0;
       @include breakpoint() {
          position: relative;
-         bottom: 0;
+         bottom: 15px;
          left: 0;
          li {
-            margin-bottom: 15px;
+            margin-bottom: -5px;
          }
+      }
+      li:first-child {
+         margin-left: 0 !important;
       }
       li:last-child {
          margin-left: 54px;
          @include breakpoint() {
             margin-left: 0;
+            margin-bottom: 15px;
          }
       }
    }

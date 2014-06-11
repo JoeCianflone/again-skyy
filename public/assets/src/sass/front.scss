@@ -29,7 +29,6 @@
 .masthead {
       background: transparent image-url("m/bg-masthead.png") 0 0 no-repeat;
       height: image-height("m/bg-masthead.png");
-   }
    p {
          @include font-size(16px);
          line-height: 2.2;
@@ -40,6 +39,7 @@
          height: image-height("m/logo.png");
          width: image-width("m/logo.png");
    }
+}
 .media-no-data {
       background: #fff;
    .show-number {
@@ -89,6 +89,22 @@
    img {
          width: 100%;
    }
+   .btn-watch {
+      @include buttons-sprite("btn-m-watch");
+      margin-left: 20px;
+      &:active,
+      &:hover {
+            @include buttons-sprite("btn-m-watch-roll");
+      }
+   }
+   .btn-save {
+         @include buttons-sprite("btn-m-save");
+         margin-left: 20px;
+      &:hover,
+      &:active {
+            @include buttons-sprite("btn-m-save-roll");
+      }
+   }
    .right-content {
          display: block !important;
          width: 258px;
@@ -99,10 +115,11 @@
          bottom: 0;
          left: 0;
          li {
-            margin-bottom: 15px;
+            margin-bottom: -5px;
          }
       li:last-child {
             margin-left: 0;
+            margin-bottom: 15px;
       }
    }
 }

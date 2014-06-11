@@ -29,12 +29,10 @@
                      <p class="description">{{$show['description']}}</p>
                   </div>
                   <ul class="list-inline bottom-buttons">
-                     <li><a href="{{$show['show_link']}}"><img src="/assets/imgs/btn-watch.png" alt=""></a></li>
-                     <li>
-                        @if (! $show['is_over'])
-                           <a href="{{$show['save_the_date']}}"><img src="/assets/imgs/btn-save.png" alt=""></a>
-                        @endif
-                     </li>
+                     <li><a href="{{$show['show_link']}}" class="btn-watch">Watch The Show</a></li>
+                     @if (! $show['is_over'])
+                     <li><a href="{{$show['save_the_date']}}" class="btn-save">Save The Date</a></li>
+                     @endif
                   </ul>
                </div>
             @else
