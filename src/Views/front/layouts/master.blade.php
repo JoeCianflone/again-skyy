@@ -33,7 +33,7 @@ FB.Canvas.setSize();
     }
     return false;
   }
-  if (NotInFacebookFrame() || ReferrerIsFacebookApp()) {
+  if (ReferrerIsFacebookApp()) {
     top.location.replace("https://www.facebook.com/pages/SV-Staging-Page/139383172799682?id=139383172799682&sk=app_806961442648829");
   }
 </script>
