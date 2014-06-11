@@ -26,6 +26,19 @@ function sizeChangeCallback() {
 FB.Canvas.setSize();
 }
 </script><!--formatted-->
+<script type="text/javascript">
+  function ReferrerIsFacebookApp() {
+    if(document.referrer) {
+      return document.referrer.indexOf("apps.facebook.com") != -1;
+    }
+    return false;
+  }
+  if (NotInFacebookFrame() || ReferrerIsFacebookApp()) {
+    top.location.replace("https://www.facebook.com/pages/SV-Staging-Page/139383172799682?id=139383172799682&sk=app_806961442648829");
+  }
+</script>
+
+</script>
    <script>(function(d, s, id) {
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) return;
