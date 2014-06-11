@@ -5,7 +5,7 @@ const CONTROLLER = "Cianflone\\Again\\Controllers\\";
 Route::any('/', CONTROLLER . "HomeController@index");
 Route::any('/mobile', CONTROLLER . "HomeController@mobile");
 Route::any('/redirect', function () {
-    return "<script>top.location='http://skyystream.com/mobile'</script>";
+    return "<script>top.location='https://svsbr2014.com/mobile'</script>";
 });
 
 // Admin panel stuff here .....................................................
