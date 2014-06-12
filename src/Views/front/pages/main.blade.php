@@ -29,9 +29,9 @@
                      <p class="description">{{$show['description']}}</p>
                   </div>
                   <ul class="list-inline bottom-buttons">
-                     <li><a href="{{$show['show_link']}}" class="btn-watch">Watch The Show</a></li>
+                     <li><a target="_top" href="{{$show['show_link']}}" class="btn-watch">Watch The Show</a></li>
                      @if (! $show['is_over'])
-                     <li><a href="{{$show['save_the_date']}}" class="btn-save">Save The Date</a></li>
+                     <li><a  target="_top" href="{{$show['save_the_date']}}" class="btn-save">Save The Date</a></li>
                      @endif
                   </ul>
                </div>
