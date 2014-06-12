@@ -34,6 +34,12 @@
          width: image-width("m/logo.png");
       }
    }
+   .header-text {
+      padding: 0 40px;
+      @include breakpoint() {
+         padding: 0 25px;
+      }
+   }
    .social-masthead {
       margin-top: 19px;
 

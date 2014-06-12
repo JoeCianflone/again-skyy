@@ -27,8 +27,12 @@
       width: 320px;
    }
 .masthead {
-      background: transparent image-url("m/bg-masthead.png") 0 0 no-repeat;
-      height: image-height("m/bg-masthead.png");
+   background: transparent image-url("m/bg-masthead.png") 0 0 no-repeat;
+   height: image-height("m/bg-masthead.png");
+   div  {
+      display: block;
+      float: none;
+   }
    p {
          @include font-size(16px);
          line-height: 2.2;
@@ -38,6 +42,9 @@
          background: transparent image-url("m/logo.png") 0 0 no-repeat;
          height: image-height("m/logo.png");
          width: image-width("m/logo.png");
+   }
+   .header-text {
+      padding: 0 0px;
    }
 }
 .media-no-data {
